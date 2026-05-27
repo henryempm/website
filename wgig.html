@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fort Marais | When God is Gone</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body class="wgig">
+  <div class="wgig-overlay" aria-hidden="true"></div>
+
+  <!-- nav toggle / backdrop / drawer -->
+  <!-- main content -->
+</body>
+
+  <!-- NAV TOGGLE -->
+  <button class="nav-toggle" type="button" aria-label="Open navigation">
+    <img src="nav-bar-toggle.png" alt="Toggle Navigation">
+  </button>
+
+  <!-- BACKDROP -->
+  <div class="nav-backdrop" aria-hidden="true"></div>
+
+  <!-- SLIDE-IN NAV DRAWER -->
+  <nav class="nav-drawer" aria-label="Site navigation">
+    <a href="index.html"><img src="button-cream-1.png" alt="Landing"></a>
+    <a href="info.html"><img src="button-cream-4.png" alt="Info"></a>
+  </nav>
+
+  <script>
+    const body = document.body;
+    const toggleBtn = document.querySelector('.nav-toggle');
+    const drawer = document.querySelector('.nav-drawer');
+    const backdrop = document.querySelector('.nav-backdrop');
+
+    function openNav() {
+      body.classList.add('nav-open');
+      toggleBtn.setAttribute('aria-label', 'Close navigation');
+    }
+
+    function closeNav() {
+      body.classList.remove('nav-open');
+      toggleBtn.setAttribute('aria-label', 'Open navigation');
+    }
+
+    if (toggleBtn && drawer && backdrop) {
+      toggleBtn.addEventListener('click', () => {
+        body.classList.contains('nav-open') ? closeNav() : openNav();
+      });
+
+      backdrop.addEventListener('click', closeNav);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeNav();
+      });
+
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    }
+  </script>
+
+</body>
+</html>

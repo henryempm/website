@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fort Marais | Information</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body class="info-page">
+
+  <div class="moving-bg">
+    <div class="info-overlay">
+
+      <!-- NAV TOGGLE -->
+      <button class="nav-toggle" type="button" aria-label="Open navigation">
+        <img src="nav-bar-toggle.png" alt="Toggle Navigation">
+      </button>
+
+      <!-- BACKDROP -->
+      <div class="nav-backdrop" aria-hidden="true"></div>
+
+      <!-- SLIDE-IN NAV DRAWER -->
+      <nav class="vertical-nav nav-drawer" aria-label="Site navigation">
+        <a href="index.html"><img src="button-cream-1.png" alt="Landing"></a>
+        <a href="info.html"><img src="button-cream-4.png" alt="Info"></a>
+      </nav>
+
+      <!-- MAIN CONTENT -->
+      <div class="main-content">
+
+ <!-- LEFT -->
+<div class="left-half">
+  <div class="info-title-img">
+    <img src="about-title-header.png" alt="About">
+  </div>
+
+  <section class="about-text-panel">
+    <p>
+      Fort Marais' Art Dealership arm is concerned with providing select examples of Old Master and Contemporary Fine Art, hosting <i>sui generis</i> showcases of emerging stars and underloved virtuosos.
+    </p>
+
+    <p>
+      Fort Marais' Art Rental arm is focused on offering art via a subscription model to select corporate and institutional clients on a request basis.
+    </p>
+
+    <p class="about-contact">
+      <i>Please submit general enquiries to</i><br>
+      <a href="mailto:h.miles@fortmarais.com">h.miles@fortmarais.com</a>
+    </p>
+  </section>
+</div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right-half">
+
+          <div class="info-title-img">
+            <img src="news-title-header.png" alt="News">
+          </div>
+
+          <!-- EVENT 1 -->
+          <a class="event-card event-1" href="wgig.html">
+            <div class="event-content">
+              <h3><strong>#1</strong></h3>
+              <p><i>Coming Soon</i></p>
+            </div>
+
+            <svg class="event-border" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M8,8 
+                       L92,8 
+                       C96,10 96,90 92,92
+                       L8,92
+                       C4,90 4,10 8,8 Z"/>
+            </svg>
+          </a>
+
+          <!-- EVENT 2 -->
+          <a class="event-card event-2" href="wgig.html">
+            <div class="event-content">
+              <h3><strong>#2</strong></h3>
+              <p><i>Coming Soon</i></p>
+            </div>
+
+            <svg class="event-border" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M8,8 
+                       L92,8 
+                       C96,10 96,90 92,92
+                       L8,92
+                       C4,90 4,10 8,8 Z"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+     <footer class="site-footer">
+  <div class="footer-row">
+    <div class="footer-left">
+    <a href="terms.html" class="footer-icon footer-terms">
+      <img src="terms-and-conditions-button-2.png" alt="Terms" class="footer-img">
+    </a>
+    </div>
+
+    <div class="footer-center">
+      <img src="fort-marais-footer-2.png" alt="Fort Marais" class="footer-logo footer-img">
+    </div>
+
+    <div class="footer-right">
+      <a href="https://www.instagram.com/fortmarais_gallery/" target="_blank" class="footer-icon footer-instagram" rel="noopener">
+        <img src="instagram-button-2.png" alt="Instagram" class="footer-img">
+      </a>
+
+      <a href="https://www.linkedin.com/company/fort-marais" target="_blank" class="footer-icon footer-linkedin" rel="noopener">
+        <img src="linkedin-button-2.png" alt="LinkedIn" class="footer-img">
+      </a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    const body = document.body;
+    const toggleBtn = document.querySelector('.nav-toggle');
+    const drawer = document.querySelector('.nav-drawer');
+    const backdrop = document.querySelector('.nav-backdrop');
+
+    function openNav() {
+      body.classList.add('nav-open');
+      toggleBtn.setAttribute('aria-label', 'Close navigation');
+    }
+
+    function closeNav() {
+      body.classList.remove('nav-open');
+      toggleBtn.setAttribute('aria-label', 'Open navigation');
+    }
+
+    if (toggleBtn && drawer && backdrop) {
+      toggleBtn.addEventListener('click', () => {
+        body.classList.contains('nav-open') ? closeNav() : openNav();
+      });
+
+      backdrop.addEventListener('click', closeNav);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeNav();
+      });
+
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    }
+  </script>
+
+</body>
+</html>

@@ -349,7 +349,6 @@ body.info-page {
 }
 
 .info-title-img img {
-  max-width: 250px;
   width: 100%;
   height: auto;
   display: block;
@@ -360,6 +359,16 @@ body.info-page {
 .info-title-img img {
   background: none !important;
   box-shadow: none !important;
+}
+
+/* Individual title image sizes */
+.about-title-img img {
+  max-width: 250px;
+}
+
+.news-title-img img {
+  max-width: 210px;
+  padding-right: 2rem;
 }
 
 /* ====================
